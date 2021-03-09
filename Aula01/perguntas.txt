@@ -1,0 +1,54 @@
+******************************************************************************
+
+1. Em qual pasta o jdk do java está instalado? (não incluir a pasta \bin
+    nesta etapa)
+
+R1:  Corretto: "C:\Program Files\Amazon Corretto"
+     Java:     "C:\Program Files\Java"
+
+******************************************************************************
+
+2 . E qual o caminho completo até os executáveis javac e java, que
+    foram instalados do computador?
+
+R2: Dentro da ./bin do dir em R1.
+
+******************************************************************************
+
+3. Como compilamos um programa por linha de comando utilizando o
+    javac?
+
+R3:
+
+******************************************************************************
+
+4. E como executamos este programa?
+
+R4:
+
+******************************************************************************
+
+5. O que são variáveis do ambiente? Para que elas servem?
+
+R5:
+
+******************************************************************************
+
+6. Qualquer um pode criar uma variável de ambiente?
+
+R6:
+
+******************************************************************************
+
+7. Como eu crio um variável de ambiente no Windows/Linux (escolha
+    apenas 1)?
+
+R7:
+
+******************************************************************************
+
+8. O que é JAVA_HOME? Por que preciso dele?
+
+R8:
+
+******************************************************************************
