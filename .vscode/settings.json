@@ -1,0 +1,15 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": false,
+        "**/.hg": false,
+        "**/CVS": false,
+        "**/.DS_Store": false,
+        "**/.classpath": false,
+        "**/.project": false,
+        "**/.settings": false,
+        "**/.factorypath": false,
+        "**/.vscode": true
+    },
+    "explorerExclude.backup": null
+}

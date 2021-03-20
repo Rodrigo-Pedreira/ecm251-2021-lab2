@@ -1,4 +1,4 @@
-package pedreira.machado.rodrigo;
+package Aula05.src.pedreira.machado.rodrigo;
 
 import java.time.LocalDate;
 
@@ -6,13 +6,11 @@ import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Titulo {
     private double valor;
-    private String nome;
     private double jurosPorDia;
     private LocalDate dataPagamento;
 
     public Titulo(double valor, String nome, double jurosPorDia, String dataPagamento) {
         this.valor = valor;
-        this.nome = nome;
         this.jurosPorDia = jurosPorDia;
         this.dataPagamento = LocalDate.parse(dataPagamento);
     }

@@ -1,4 +1,4 @@
-package pedreira.machado.rodrigo;
+package Aula04.src.pedreira.machado.rodrigo;
 
 public class Cliente {
 
@@ -7,7 +7,6 @@ public class Cliente {
     }
 
     private String nome;
-    private String sobrenome;
     private String cpf;
 
     @Override

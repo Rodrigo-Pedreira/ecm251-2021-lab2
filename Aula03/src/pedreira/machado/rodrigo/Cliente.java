@@ -1,4 +1,4 @@
-package pedreira.machado.rodrigo;
+package Aula03.src.pedreira.machado.rodrigo;
 
 public class Cliente {
     String titular;
