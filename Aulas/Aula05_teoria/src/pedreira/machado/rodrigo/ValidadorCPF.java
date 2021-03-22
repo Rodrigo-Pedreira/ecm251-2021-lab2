@@ -1,4 +1,4 @@
-package Aula05_teoria.src.pedreira.machado.rodrigo;
+package Aulas.Aula05_teoria.src.pedreira.machado.rodrigo;
 
 public class ValidadorCPF {
 

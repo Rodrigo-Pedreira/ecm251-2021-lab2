@@ -1,4 +1,4 @@
-package Aula01.Prog1;
+package Aulas.Aula01.Prog1;
 
 class OlaMundo{
     public static void main(String[] args) {

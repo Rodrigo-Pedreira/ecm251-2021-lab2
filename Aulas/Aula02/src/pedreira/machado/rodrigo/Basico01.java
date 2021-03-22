@@ -1,18 +1,13 @@
-package pedreira.machado.rodrigo;
-
-import javax.imageio.stream.ImageInputStream;
+package Aulas.Aula02.src.pedreira.machado.rodrigo;
 
 public class Basico01 {
     //Tipos primitivos
     public static void main(String[] args) {
-        int hp;
         boolean megaEvolui;
         float atk;
         double satk;
         String nome;
 
-        // Atribuicoes
-        hp = 100;
         megaEvolui = true;
         atk = 50.0f;
         satk = 55.0;

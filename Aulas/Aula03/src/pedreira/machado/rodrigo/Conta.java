@@ -1,4 +1,4 @@
-package Aula03.src.pedreira.machado.rodrigo;
+package Aulas.Aula03.src.pedreira.machado.rodrigo;
 
 public class Conta {
     //Atributos.

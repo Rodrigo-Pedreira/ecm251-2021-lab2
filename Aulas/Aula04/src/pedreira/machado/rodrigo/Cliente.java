@@ -1,4 +1,4 @@
-package Aula04.src.pedreira.machado.rodrigo;
+package Aulas.Aula04.src.pedreira.machado.rodrigo;
 
 public class Cliente {
 

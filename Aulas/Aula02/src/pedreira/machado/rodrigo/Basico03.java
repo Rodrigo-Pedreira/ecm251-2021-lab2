@@ -1,4 +1,4 @@
-package pedreira.machado.rodrigo;
+package Aulas.Aula02.src.pedreira.machado.rodrigo;
 
 import java.util.Random;
 
