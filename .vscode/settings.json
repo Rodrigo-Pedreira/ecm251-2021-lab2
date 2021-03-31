@@ -11,5 +11,8 @@
         "**/.factorypath": false,
         "**/.vscode": true
     },
-    "explorerExclude.backup": null
+    "explorerExclude.backup": null,
+    "todo-tree.tree.showBadges": true,
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.tree.disableCompactFolders": false
 }
