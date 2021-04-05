@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch D4TesteDrive",
+            "request": "launch",
+            "mainClass": "Aulas.Aula06.Heranca.src.D4TesteDrive",
+            "projectName": "ecm251-2021-lab2_6e4193f4"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
