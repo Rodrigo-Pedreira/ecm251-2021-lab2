@@ -3,10 +3,24 @@ package models;
 import interfaces.Apresentacao;
 import interfaces.PostarMensagem;
 
+import java.util.LinkedHashSet;
+import java.util.Random;
+import java.util.Set;
+
 /**
  * Classe abstrta dos Membros, sera classe pai dos tipos de membro. Implementa as Interfaces Apresentacao, PostarMensagem
  */
 abstract class Membro implements Apresentacao, PostarMensagem {
+
+    /**
+     * Instancia um objeto da classe Random, que ira gerar numeros aleatorios.
+     */
+    Random randomizer = new Random();
+
+    /**
+     * Um LinkedHashSet de strings que ira conter os ids e garantir que ele e unico. id tem 10 algarismos.
+     */
+    Set<String> idLinkedHashSet = new LinkedHashSet<String>();  //TODO: Lembrar de retirar id da lista quando usuario for deletado.
 
     /**
      * Catergoria/Tipo do membro.
@@ -29,15 +43,22 @@ abstract class Membro implements Apresentacao, PostarMensagem {
     protected String email;
 
     /**
-     * Contrutor da classe Membro, usado para cadastrar nomos usuarios.
+     * Contrutor da classe Membro, usado para cadastrar nomos usuarios. Cria um id unico de 10 algarismos para o usuario.
      * @param nome do membro a ser cadastrado.
      * @param email do membro a ser cadastrado
      */
     public Membro(String nome, String email) {
         this.nome = nome;
         this.email = email;
+        String idTemp;
+        do {
+            idTemp="";
+            for (int i = 0; i < 10; i++) {
+                int idInteger = randomizer.nextInt(10);
+                idTemp += idInteger;
+            }
+        }while (idLinkedHashSet.contains(idTemp));
+        idLinkedHashSet.add(idTemp);
+        this.id = idTemp;
     }
-
-
-
 }
