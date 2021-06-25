@@ -3,11 +3,18 @@ package models;
 import enums.TiposMembros;
 
 /**
- * Classe de um membro Big Brothers.
+ * Classe BigBrothers, filha de Membros, implementa por heranca Apresentacao, PostarMensagem.
+ *
+ * Atributos:
+ *              categoria;
+ *              nome;
+ *              email;
+ *              id;
  */
 public class BigBrothers extends Membro{
+
     /**
-     * Contrutor da classe BigBrothers. Ira cadastrar um novo usuario
+     * Contrutor da classe BigBrothers. Ira cadastrar um novo usuario do tipo Big Brother.
      * @param nome do usuario que sera cadastrado.
      * @param email do usuario que sera cadastrado.
      */

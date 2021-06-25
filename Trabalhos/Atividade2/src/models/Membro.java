@@ -8,7 +8,13 @@ import java.util.Random;
 import java.util.Set;
 
 /**
- * Classe abstrta dos Membros, sera classe pai dos tipos de membro. Implementa as Interfaces Apresentacao, PostarMensagem
+ * Classe abstrta Membros, sera classe pai dos tipos de membro(BigBrothers,HeavyLifters,MobileMembers,ScriptGuys). Implementa as Interfaces Apresentacao, PostarMensagem
+ *
+ * Atributos:
+ *              categoria;
+ *              nome;
+ *              email;
+ *              id;
  */
 abstract class Membro implements Apresentacao, PostarMensagem {
 
