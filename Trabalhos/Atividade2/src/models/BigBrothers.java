@@ -9,6 +9,6 @@ public class BigBrothers extends Membro{
 
     @Override
     public void postarMensagem() {
-
+        System.out.println();
     }
 }
