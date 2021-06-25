@@ -1,7 +1,14 @@
 package models;
 
-import interfaces.Apresentacao;
-import interfaces.PostarMensagem;
+public class BigBrothers extends Membro{
 
-public class BigBrothers extends Membro implements Apresentacao, PostarMensagem {
+    @Override
+    public void apresentarResumo() {
+
+    }
+
+    @Override
+    public void postarMensagem() {
+
+    }
 }

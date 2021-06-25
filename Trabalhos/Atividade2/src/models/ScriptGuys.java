@@ -1,7 +1,13 @@
 package models;
 
-import interfaces.Apresentacao;
-import interfaces.PostarMensagem;
+public class ScriptGuys extends Membro {
+    @Override
+    public void apresentarResumo() {
 
-public class ScriptGuys extends Membro  implements Apresentacao, PostarMensagem {
+    }
+
+    @Override
+    public void postarMensagem() {
+
+    }
 }

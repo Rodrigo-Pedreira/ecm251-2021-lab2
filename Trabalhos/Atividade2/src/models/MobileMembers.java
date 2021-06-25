@@ -1,9 +1,15 @@
 package models;
 
-import interfaces.Apresentacao;
-import interfaces.PostarMensagem;
-
-public class MobileMembers extends Membro  implements Apresentacao, PostarMensagem {
+public class MobileMembers extends Membro{
 
 
+    @Override
+    public void apresentarResumo() {
+
+    }
+
+    @Override
+    public void postarMensagem() {
+
+    }
 }

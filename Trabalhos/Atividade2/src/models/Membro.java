@@ -1,6 +1,9 @@
 package models;
 
-abstract class Membro {
+import interfaces.Apresentacao;
+import interfaces.PostarMensagem;
+
+abstract class Membro implements Apresentacao, PostarMensagem {
 
 
 
