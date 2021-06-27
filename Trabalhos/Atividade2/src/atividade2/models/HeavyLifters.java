@@ -27,9 +27,9 @@ public class HeavyLifters extends Membro {
     @Override
     public void postarMensagem() {
         if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() ))  {
-            System.out.println("Podem contar conosco!");
+            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: Podem contar conosco!");
         }else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name() )){
-            System.out.println("N00b_qu3_n_Se_r3pita.bat");
+            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: N00b_qu3_n_Se_r3pita.bat");
         }
     }
 

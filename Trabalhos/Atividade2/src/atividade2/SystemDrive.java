@@ -5,6 +5,7 @@ import atividade2.models.*;
 
 import java.util.HashMap;
 import java.util.Scanner;
+import
 
 /**
  * Classe atividade2.SystemDrive. Controla o programa.
@@ -57,7 +58,7 @@ public abstract class SystemDrive {
             case 1:     // Posta uma mensaguem que forcara todos os usuarios assinarem em baixo com suas respectivas mensagens de acordo com o horario de trabalho
                 System.out.println("Digite sua mensagem: ");
                 String mensagem = scanner.nextLine();
-                //TODO: Postar as assinaturas. (foreach mapa?)
+                mapaMembro.forEach((k,v) -> v.postarMensagem() );
                 break;
 
             case 2:     // Cadastra novos Usuarios.
@@ -68,8 +69,8 @@ public abstract class SystemDrive {
                 removerUsuarios();
                 break;
 
-            case 4:
-//                System.out.println(mapaMembro.get("123").toString());
+            case 4:     // Exibi resumo de todos os usuarios.
+                mapaMembro.forEach((k,v) -> v.apresentarResumo() );
                 break;
 
             case 5:
@@ -102,6 +103,7 @@ public abstract class SystemDrive {
 
         boolean loopSwitch = true;
         String nome, email;
+
 
         System.out.println("Insira o nome do Usuario:");
         nome = scanner.nextLine().trim();

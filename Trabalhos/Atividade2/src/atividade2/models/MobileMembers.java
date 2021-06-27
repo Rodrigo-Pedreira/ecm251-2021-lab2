@@ -27,10 +27,10 @@ public class MobileMembers extends Membro{
     @Override
     public void postarMensagem() {
         if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() )){
-            System.out.println("Happy Coding!");
+            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: Happy Coding!");
         }
         else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name() )){
-            System.out.println("MAsK_S0c13ty");
+            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: MAsK_S0c13ty");
         }
     }
 }
