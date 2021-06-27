@@ -67,8 +67,7 @@ public abstract class SystemDrive {
             case 1:     // Posta uma mensaguem que forcara todos os usuarios assinarem em baixo com suas respectivas mensagens de acordo com o horario de trabalho
                 System.out.println("Digite sua mensagem: ");
                 String mensagem = scanner.nextLine();
-                System.out.println(mensagem);
-                //TODO: Postar assinaturas de todos. (foreach mapa?)
+                //TODO: Postar as assinaturas. (foreach mapa?)
                 break;
 
             case 2:     // Cadastra novos Usuarios.

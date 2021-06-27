@@ -32,6 +32,9 @@ public class BigBrothers extends Membro{
 
     }
 
+    /**
+     * Posta as mensagens respectivas dos membros Big Brothers de acordo com o horario de trabalho.
+     */
     @Override
     public void postarMensagem() {
         if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() ))  {

@@ -21,7 +21,9 @@ public class MobileMembers extends Membro{
     public void apresentarResumo() {
 
     }
-
+    /**
+     * Posta as mensagens respectivas dos membros Mobile Members de acordo com o horario de trabalho.
+     */
     @Override
     public void postarMensagem() {
         if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() )){

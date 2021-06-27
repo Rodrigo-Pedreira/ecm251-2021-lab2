@@ -21,7 +21,9 @@ public class HeavyLifters extends Membro {
     public void apresentarResumo() {
 
     }
-
+    /**
+     * Posta as mensagens respectivas dos membros Heavy Lifters de acordo com o horario de trabalho.
+     */
     @Override
     public void postarMensagem() {
         if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() ))  {
@@ -30,4 +32,6 @@ public class HeavyLifters extends Membro {
             System.out.println("N00b_qu3_n_Se_r3pita.bat");
         }
     }
+
 }
+
