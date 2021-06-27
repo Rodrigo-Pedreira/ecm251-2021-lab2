@@ -21,12 +21,12 @@ public abstract class Membro implements Apresentacao, PostarMensagem {
     /**
      * Instancia um objeto da classe Random, que ira gerar numeros aleatorios.
      */
-    Random randomizer = new Random();
+    private Random randomizer = new Random();
 
     /**
      * Um LinkedHashSet de strings que ira conter os ids e garantir que ele e unico. id tem 10 algarismos.
      */
-    Set<String> idLinkedHashSet = new LinkedHashSet<String>();  //TODO: Lembrar de retirar id da lista quando usuario for deletado.
+    private static Set<String> idLinkedHashSet = new LinkedHashSet<String>();  //TODO: Lembrar de retirar id da lista quando usuario for deletado.
 
     /**
      * Catergoria/Tipo do membro.
@@ -57,6 +57,7 @@ public abstract class Membro implements Apresentacao, PostarMensagem {
         this.nome = nome;
         this.email = email;
         String idTemp;
+
         do {
             idTemp="";
             for (int i = 0; i < 10; i++) {
@@ -64,7 +65,29 @@ public abstract class Membro implements Apresentacao, PostarMensagem {
                 idTemp += idInteger;
             }
         }while (idLinkedHashSet.contains(idTemp));
+
         idLinkedHashSet.add(idTemp);
         this.id = idTemp;
+    }
+
+    /**
+     * Metodo publico void que remove o id passado por parametro do HashSet dos ids.
+     * @param idRemove id que sera removido.
+     */
+    public static void removeIdSet(String idRemove){
+        try {
+            idLinkedHashSet.remove(idRemove);
+        }
+        catch (Exception exception){
+            System.out.println("Falha ao remover id. Numero nao encotrado");
+        }
+    }
+
+    /**
+     * Metodo que retorna o parametro id.
+     * @return id
+     */
+    public String getId() {
+        return id;
     }
 }

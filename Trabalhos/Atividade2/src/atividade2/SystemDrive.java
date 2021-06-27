@@ -27,16 +27,6 @@ public abstract class SystemDrive {
     private static HashMap<String, Membro> mapaMembro = new HashMap<String, Membro>();
 
     /**
-     * Contrutor da classe atividade2.SystemDrive. Define variaveis caseVar = -1; runState = true; horarioAtualTrabalho = "REGULAR"; Cria HashMap<String, Member> como mapaMembro.
-     */
-//    public SystemDrive() {
-//        this.caseVar = -1;
-//        this.runState = true;
-//        horarioAtualTrabalho = "REGULAR";
-//        mapaMembro = new HashMap<String, Membro>();
-//    }
-
-    /**
      * Metedo static void responsavel pela execucao continua do sistema. Sera um loop.
      * @param runState controla o loop.
      */
@@ -58,7 +48,7 @@ public abstract class SystemDrive {
         int caseVar;
 
         System.out.println("\nHorario de trabalho atual: " + horarioAtualTrabalho);
-        System.out.println("Opcoes:\n1 - Para postar mensagem;\n2 - Para cadastrar os membros;\n3 - Para mostras usuarios cadastrados;\n4 - Para;\n5 - Para;\n6 - Para trocar o horario de trabalho(REGULAR ou EXTRA);\n0 - Para Sair.\n\nEscolha uma opcao:");
+        System.out.println("Opcoes:\n1 - Para postar mensagem;\n2 - Para cadastrar membros;\n3 - Para remover membros;\n4 - Para;\n5 - Para;\n6 - Para trocar o horario de trabalho(REGULAR ou EXTRA);\n0 - Para Sair.\n\nEscolha uma opcao:");
 
         caseVar = scanner.nextInt();
         scanner.nextLine();
@@ -74,11 +64,12 @@ public abstract class SystemDrive {
                 cadastrarUsuarios();
                 break;
 
-            case 3:
+            case 3:     // Remove usuarios.
+                removerUsuarios();
                 break;
 
             case 4:
-
+//                System.out.println(mapaMembro.get("123").toString());
                 break;
 
             case 5:
@@ -118,7 +109,7 @@ public abstract class SystemDrive {
         System.out.println("Insira o email do Usuario:");
         email = scanner.nextLine().trim();
 
-        while(loopSwitch) {
+        while(loopSwitch) { //TODO: Chekar se foi put ou se ja exisitia e loopar.
             System.out.println("Categorias:\n1 - Big Brothers;\n2 - Heavy Lifters;\n3 - Mobile Members;\n4 - Script Guys.\nEscolha uma categoria:");
             int switchCase = scanner.nextInt();
             scanner.nextLine();
@@ -134,7 +125,7 @@ public abstract class SystemDrive {
                     loopSwitch = false;
                     break;
 
-                case 3: // Heavy Lifters
+                case 3: // Mobile Members
                     mapaMembro.putIfAbsent(nome,new MobileMembers(nome,email));
                     loopSwitch = false;
                     break;
@@ -149,6 +140,23 @@ public abstract class SystemDrive {
                     break;
             }
         }
+    }
+
+    /**
+     * Metodo publico statico void que remove usuarios ja cadastrados no sistema.
+     */
+    public static void removerUsuarios(){
+        String nome;
+            System.out.println("Insira o nome do Usuario:");
+            nome = scanner.nextLine().trim();
+            if (mapaMembro.containsKey(nome)) {
+                Membro.removeIdSet(mapaMembro.get(nome).getId());
+                mapaMembro.remove(nome);
+                System.out.println("Usuario " + nome + "removido.");
+            }
+            else{
+                System.out.println("Usuario " + nome + "nao encontrado no banco de dados.");
+            }
     }
 
     /**

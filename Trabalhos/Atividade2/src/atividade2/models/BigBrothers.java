@@ -39,10 +39,20 @@ public class BigBrothers extends Membro{
     public void postarMensagem() {
         if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() ))  {
             System.out.println("Sempre ajudando as pessoas membros ou não S2!");
-        }else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name() )){
+        }
+        else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name() )){
             System.out.println("...");
         }
+    }
 
+    @Override
+    public String toString() {
+        return "BigBrothers{" +
+                ", categoria='" + categoria + '\'' +
+                ", nome='" + nome + '\'' +
+                ", id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
 
