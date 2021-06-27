@@ -1,4 +1,4 @@
-package interfaces;
+package atividade2.interfaces;
 
 /**
  * Interface Apresentacao. Contem o metodo apresentarResumo.

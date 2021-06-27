@@ -1,31 +1,15 @@
-import enums.HorariosTrabalho;
-import models.*;
+package atividade2;
 
-import javax.swing.plaf.metal.MetalFileChooserUI;
-import java.io.File;
-import java.lang.reflect.Member;
-import java.nio.file.Files;
-import java.util.Arrays;
+import atividade2.enums.HorariosTrabalho;
+import atividade2.models.*;
+
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.List;
-
-import static java.util.Arrays.*;
 
 /**
- * Classe SystemDrive. Controla o programa.
+ * Classe atividade2.SystemDrive. Controla o programa.
  */
-public class SystemDrive {
-
-    /**
-     * Variavel int que ira controlar o menu (switch) do programa.Valor default -1 (entra no case default do switch/menu).
-     */
-    private int caseVar;
-
-    /**
-     * Varieavel boolean que contrala a execucao do sistema. Valor default true. Quando false acaba o loop e o programa finaliza.
-     */
-    private boolean runState;
+public abstract class SystemDrive {
 
     /**
      * Variavel String que guarda informacao do horario atual de trabalho; Default "REGULAR"
@@ -35,27 +19,28 @@ public class SystemDrive {
     /**
      * Scanner utilizado para ler input do usuario (System.in).
      */
-    Scanner scanner = new Scanner(System.in);
+    private static Scanner  scanner = new Scanner(System.in);
 
     /**
      * Variavel HashMap que salva a referencia para objetos. Chave e o nome o Usuario.
      */
-    private HashMap<String, Membro> mapaMembro;
+    private static HashMap<String, Membro> mapaMembro = new HashMap<String, Membro>();
 
     /**
-     * Contrutor da classe SystemDrive. Define variaveis caseVar = -1; runState = true; horarioAtualTrabalho = "REGULAR"; Cria HashMap<String, Member> como mapaMembro.
+     * Contrutor da classe atividade2.SystemDrive. Define variaveis caseVar = -1; runState = true; horarioAtualTrabalho = "REGULAR"; Cria HashMap<String, Member> como mapaMembro.
      */
-    public SystemDrive() {
-        this.caseVar = -1;
-        this.runState = true;
-        this.horarioAtualTrabalho = "REGULAR";
-        mapaMembro = new HashMap<String, Membro>();
-    }
+//    public SystemDrive() {
+//        this.caseVar = -1;
+//        this.runState = true;
+//        horarioAtualTrabalho = "REGULAR";
+//        mapaMembro = new HashMap<String, Membro>();
+//    }
 
     /**
-     * Metedo void responsavel pela execucao continua do sistema. Sera um loop com um menu. Variavel runState controla o loop.
+     * Metedo static void responsavel pela execucao continua do sistema. Sera um loop.
+     * @param runState controla o loop.
      */
-    public void runCode() {
+    public static void runCode(boolean runState) {
         System.out.println("\n---------------- Ola, 1337 hacker! Bem vindo ao MAsK_S0c13ty. ----------------\n");
         while (runState) {
             runState = menuPrograma();
@@ -63,9 +48,15 @@ public class SystemDrive {
     }
 
     /**
-     * Metodo boolean que executa o menu boas vindas do programa e aceita um input do usuario para realizar funcoes.
+     * Metodo static boolean que executa o menu boas vindas do programa e aceita um input do usuario para realizar funcoes.
      */
-    private boolean menuPrograma(){
+    private static boolean menuPrograma(){
+
+        /**
+         * Variavel int que ira controlar o menu (switch) do programa.Valor default -1 (entra no case default do switch/menu).
+         */
+        int caseVar;
+
         System.out.println("\nHorario de trabalho atual: " + horarioAtualTrabalho);
         System.out.println("Opcoes:\n1 - Para postar mensagem;\n2 - Para cadastrar os membros;\n3 - Para mostras usuarios cadastrados;\n4 - Para;\n5 - Para;\n6 - Para trocar o horario de trabalho(REGULAR ou EXTRA);\n0 - Para Sair.\n\nEscolha uma opcao:");
 
@@ -73,7 +64,7 @@ public class SystemDrive {
         scanner.nextLine();
 
         switch (caseVar){
-            case 1:
+            case 1:     // Posta uma mensaguem que forcara todos os usuarios assinarem em baixo com suas respectivas mensagens de acordo com o horario de trabalho
                 System.out.println("Digite sua mensagem: ");
                 String mensagem = scanner.nextLine();
                 System.out.println(mensagem);
@@ -115,9 +106,9 @@ public class SystemDrive {
     }
 
     /**
-     * Metodo void que cadastra novos usuarios.
+     * Metodo static void que cadastra novos usuarios.
      */
-    private void cadastrarUsuarios(){
+    private static void cadastrarUsuarios(){
 
         boolean loopSwitch = true;
         String nome, email;
@@ -162,10 +153,10 @@ public class SystemDrive {
     }
 
     /**
-     * Metodo que retorna Horario atual de trabalho do sistema.
+     * Metodo static que retorna Horario atual de trabalho do sistema.
      * @return horarioAtualTrabalho
      */
-    public String getHorarioAtualTrabalho() {
+    public static String getHorarioAtualTrabalho() {
         return horarioAtualTrabalho;
     }
 }

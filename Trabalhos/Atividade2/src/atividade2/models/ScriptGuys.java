@@ -1,4 +1,7 @@
-package models;
+package atividade2.models;
+
+import atividade2.SystemDrive;
+import atividade2.enums.HorariosTrabalho;
 
 /**
  * Classe ScriptGuys, filha de Membros, implementa por heranca Apresentacao, PostarMensagem.

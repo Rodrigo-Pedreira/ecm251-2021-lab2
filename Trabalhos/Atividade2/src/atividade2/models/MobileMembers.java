@@ -1,4 +1,7 @@
-package models;
+package atividade2.models;
+
+import atividade2.SystemDrive;
+import atividade2.enums.HorariosTrabalho;
 
 /**
  * Classe MobileMembers, filha de Membros , implementa por heranca Apresentacao, PostarMensagem.
@@ -21,6 +24,11 @@ public class MobileMembers extends Membro{
 
     @Override
     public void postarMensagem() {
-
+        if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() )){
+            System.out.println("Happy Coding!");
+        }
+        else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name() )){
+            System.out.println("MAsK_S0c13ty");
+        }
     }
 }

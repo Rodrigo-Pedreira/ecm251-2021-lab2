@@ -1,6 +1,9 @@
-package models;
+package atividade2.models;
 
-import enums.TiposMembros;
+
+import atividade2.SystemDrive;
+import atividade2.enums.HorariosTrabalho;
+import atividade2.enums.TiposMembros;
 
 /**
  * Classe BigBrothers, filha de Membros, implementa por heranca Apresentacao, PostarMensagem.
@@ -31,7 +34,12 @@ public class BigBrothers extends Membro{
 
     @Override
     public void postarMensagem() {
-        System.out.println();
+        if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() ))  {
+            System.out.println("Sempre ajudando as pessoas membros ou não S2!");
+        }else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name() )){
+            System.out.println("...");
+        }
+
     }
 }
 

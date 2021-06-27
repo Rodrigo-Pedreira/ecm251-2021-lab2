@@ -1,7 +1,7 @@
-package models;
+package atividade2.models;
 
-import interfaces.Apresentacao;
-import interfaces.PostarMensagem;
+import atividade2.interfaces.Apresentacao;
+import atividade2.interfaces.PostarMensagem;
 
 import java.util.LinkedHashSet;
 import java.util.Random;

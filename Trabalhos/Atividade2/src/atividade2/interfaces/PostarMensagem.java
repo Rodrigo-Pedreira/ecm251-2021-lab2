@@ -1,4 +1,4 @@
-package interfaces;
+package atividade2.interfaces;
 
 /**
  * Interface PostarMensagem. Contem o metodo postarMensagem.
