@@ -1,8 +1,12 @@
 import enums.HorariosTrabalho;
+import models.*;
 
+import javax.swing.plaf.metal.MetalFileChooserUI;
 import java.io.File;
+import java.lang.reflect.Member;
 import java.nio.file.Files;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.List;
 
@@ -34,16 +38,22 @@ public class SystemDrive {
     Scanner scanner = new Scanner(System.in);
 
     /**
-     * Contrutor da classe SystemDrive. Define variaveis caseVar = -1; runState = true; horarioAtualTrabalho = "REGULAR"
+     * Variavel HashMap que salva a referencia para objetos. Chave e o nome o Usuario.
+     */
+    private HashMap<String, Membro> mapaMembro;
+
+    /**
+     * Contrutor da classe SystemDrive. Define variaveis caseVar = -1; runState = true; horarioAtualTrabalho = "REGULAR"; Cria HashMap<String, Member> como mapaMembro.
      */
     public SystemDrive() {
         this.caseVar = -1;
         this.runState = true;
         this.horarioAtualTrabalho = "REGULAR";
+        mapaMembro = new HashMap<String, Membro>();
     }
 
     /**
-     * Metedo responsavel pela execucao continua do sistema. Sera um loop com um menu. Variavel runState controla o loop.
+     * Metedo void responsavel pela execucao continua do sistema. Sera um loop com um menu. Variavel runState controla o loop.
      */
     public void runCode() {
         System.out.println("\n---------------- Ola, 1337 hacker! Bem vindo ao MAsK_S0c13ty. ----------------\n");
@@ -53,18 +63,25 @@ public class SystemDrive {
     }
 
     /**
-     * Metodo que executa o menu boas vindas do programa e aceita um input do usuario para realizar funcoes.
+     * Metodo boolean que executa o menu boas vindas do programa e aceita um input do usuario para realizar funcoes.
      */
     private boolean menuPrograma(){
         System.out.println("\nHorario de trabalho atual: " + horarioAtualTrabalho);
-        System.out.println("Opcoes:\n1 - Para;\n2 - Para;\n3 - Para;\n4 - Para;\n5 - Para;\n6 - Para trocar o horario de trabalho(REGULAR ou EXTRA);\n0 - Para Sair.\n\nEscolha uma opcao:");
+        System.out.println("Opcoes:\n1 - Para postar mensagem;\n2 - Para cadastrar os membros;\n3 - Para;\n4 - Para;\n5 - Para;\n6 - Para trocar o horario de trabalho(REGULAR ou EXTRA);\n0 - Para Sair.\n\nEscolha uma opcao:");
+
         caseVar = scanner.nextInt();
+        scanner.nextLine();
 
         switch (caseVar){
             case 1:
+                System.out.println("Digite sua mensagem: ");
+                String mensagem = scanner.nextLine();
+                System.out.println(mensagem);
+                //TODO: Postar assinaturas de todos. (foreach mapa?)
                 break;
 
-            case 2:
+            case 2:     // Cadastra novos Usuarios.
+                cadastrarUsuarios();
                 break;
 
             case 3:
@@ -95,5 +112,60 @@ public class SystemDrive {
                 break;
         }
         return true; // Continua a execucao do programa, runState = true.
+    }
+
+    /**
+     * Metodo void que cadastra novos usuarios.
+     */
+    private void cadastrarUsuarios(){
+
+        boolean loopSwitch = true;
+        String nome, email;
+
+        System.out.println("Insira o nome do Usuario:");
+        nome = scanner.nextLine().trim();
+
+        System.out.println("Insira o email do Usuario:");
+        email = scanner.nextLine().trim();
+
+        while(loopSwitch) {
+            System.out.println("Categorias:\n1 - Big Brothers;\n2 - Heavy Lifters;\n3 - Mobile Members;\n4 - Script Guys.\nEscolha uma categoria:");
+            int switchCase = scanner.nextInt();
+            scanner.nextLine();
+            switch (switchCase) {
+
+                case 1: // Big Brothers
+                    mapaMembro.putIfAbsent(nome,new BigBrothers(nome,email));
+                    loopSwitch = false;
+                    break;
+
+                case 2: //Heavy Lifters
+                    mapaMembro.putIfAbsent(nome,new HeavyLifters(nome,email));
+                    loopSwitch = false;
+                    break;
+
+                case 3: // Heavy Lifters
+                    mapaMembro.putIfAbsent(nome,new MobileMembers(nome,email));
+                    loopSwitch = false;
+                    break;
+
+                case 4: // Script Guys
+                    mapaMembro.putIfAbsent(nome,new ScriptGuys(nome,email));
+                    loopSwitch = false;
+                    break;
+
+                default:
+                    System.out.println("Opacao Invalida! Digite novamente.");
+                    break;
+            }
+        }
+    }
+
+    /**
+     * Metodo que retorna Horario atual de trabalho do sistema.
+     * @return horarioAtualTrabalho
+     */
+    public String getHorarioAtualTrabalho() {
+        return horarioAtualTrabalho;
     }
 }

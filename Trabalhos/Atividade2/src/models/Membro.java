@@ -16,7 +16,7 @@ import java.util.Set;
  *              email;
  *              id;
  */
-abstract class Membro implements Apresentacao, PostarMensagem {
+public abstract class Membro implements Apresentacao, PostarMensagem {
 
     /**
      * Instancia um objeto da classe Random, que ira gerar numeros aleatorios.
