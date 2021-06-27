@@ -26,7 +26,7 @@ public abstract class Membro implements Apresentacao, PostarMensagem {
     /**
      * Um LinkedHashSet de strings que ira conter os ids e garantir que ele e unico. id tem 10 algarismos.
      */
-    private static Set<String> idLinkedHashSet = new LinkedHashSet<String>();  //TODO: Lembrar de retirar id da lista quando usuario for deletado.
+    private static Set<String> idLinkedHashSet = new LinkedHashSet<String>();
 
     /**
      * Catergoria/Tipo do membro.
@@ -80,14 +80,31 @@ public abstract class Membro implements Apresentacao, PostarMensagem {
         }
         catch (Exception exception){
             System.out.println("Falha ao remover id. Numero nao encotrado");
+            exception.printStackTrace();
         }
     }
 
     /**
-     * Metodo que retorna o parametro id.
+     * Metodo que retorna o parametro id da classe.
      * @return id
      */
     public String getId() {
         return id;
+    }
+
+    /**
+     * Metodo que retorna o parametro categoria da classe.
+     * @return categoria
+     */
+    public String getCategoria() {
+        return categoria;
+    }
+
+    /**
+     * Metodo que retorna o parametro nome da classe.
+     * @return nome
+     */
+    public String getNome() {
+        return nome;
     }
 }
