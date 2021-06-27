@@ -30,7 +30,7 @@ public class SystemDrive {
     /**
      * Variavel String que guarda informacao do horario atual de trabalho; Default "REGULAR"
      */
-    private String horarioAtualTrabalho;
+    private static String horarioAtualTrabalho = HorariosTrabalho.REGULAR.name();
 
     /**
      * Scanner utilizado para ler input do usuario (System.in).
@@ -67,7 +67,7 @@ public class SystemDrive {
      */
     private boolean menuPrograma(){
         System.out.println("\nHorario de trabalho atual: " + horarioAtualTrabalho);
-        System.out.println("Opcoes:\n1 - Para postar mensagem;\n2 - Para cadastrar os membros;\n3 - Para;\n4 - Para;\n5 - Para;\n6 - Para trocar o horario de trabalho(REGULAR ou EXTRA);\n0 - Para Sair.\n\nEscolha uma opcao:");
+        System.out.println("Opcoes:\n1 - Para postar mensagem;\n2 - Para cadastrar os membros;\n3 - Para mostras usuarios cadastrados;\n4 - Para;\n5 - Para;\n6 - Para trocar o horario de trabalho(REGULAR ou EXTRA);\n0 - Para Sair.\n\nEscolha uma opcao:");
 
         caseVar = scanner.nextInt();
         scanner.nextLine();

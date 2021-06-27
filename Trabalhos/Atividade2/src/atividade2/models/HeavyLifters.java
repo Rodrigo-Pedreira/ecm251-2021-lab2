@@ -1,5 +1,8 @@
 package models;
 
+import atividade2.SystemDrive;
+import atividade2.enums.HorariosTrabalho;
+
 /**
  * Classe HeavyLifters, filha de Membros, implementa por heranca Apresentacao, PostarMensagem.
  *
@@ -21,6 +24,10 @@ public class HeavyLifters extends Membro {
 
     @Override
     public void postarMensagem() {
-
+        if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() ))  {
+            System.out.println("Podem contar conosco!");
+        }else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name() )){
+            System.out.println("N00b_qu3_n_Se_r3pita.bat");
+        }
     }
 }

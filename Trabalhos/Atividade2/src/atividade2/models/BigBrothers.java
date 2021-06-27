@@ -13,6 +13,7 @@ import enums.TiposMembros;
  */
 public class BigBrothers extends Membro{
 
+
     /**
      * Contrutor da classe BigBrothers. Ira cadastrar um novo usuario do tipo Big Brother.
      * @param nome do usuario que sera cadastrado.
@@ -33,3 +34,4 @@ public class BigBrothers extends Membro{
         System.out.println();
     }
 }
+
