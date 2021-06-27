@@ -49,7 +49,7 @@ public abstract class SystemDrive {
         int caseVar;
 
         System.out.println("\nHorario de trabalho atual: " + horarioAtualTrabalho);
-        System.out.println("Opcoes:\n1 - Para postar mensagem;\n2 - Para cadastrar membros;\n3 - Para remover membros;\n4 - Para;\n5 - Para;\n6 - Para trocar o horario de trabalho(REGULAR ou EXTRA);\n0 - Para Sair.\n\nEscolha uma opcao:");
+        System.out.println("Opcoes:\n1 - Para postar mensagem;\n2 - Para cadastrar membros;\n3 - Para remover membros;\n4 - Para exibir resumo de todos os usuarios;\n5 - Para;\n6 - Para trocar o horario de trabalho(REGULAR ou EXTRA);\n0 - Para Sair.\n\nEscolha uma opcao:");
 
         caseVar = scanner.nextInt();
         scanner.nextLine();
@@ -74,6 +74,7 @@ public abstract class SystemDrive {
                 break;
 
             case 5:
+                System.out.println(mapaMembro.get("123").toString());
                 break;
 
             case 6:     // Toggle no horarioAtualTrabalho REGULAR, EXTRA
