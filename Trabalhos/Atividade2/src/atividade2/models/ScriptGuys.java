@@ -6,12 +6,12 @@ import atividade2.enums.TiposMembros;
 
 /**
  * Classe ScriptGuys, filha de Membros, implementa por heranca Apresentacao, PostarMensagem.
- *
+ * <p>
  * Atributos:
- *              categoria;
- *              nome;
- *              email;
- *              id;
+ * categoria;
+ * nome;
+ * email;
+ * id;
  */
 public class ScriptGuys extends Membro {
 
@@ -32,10 +32,10 @@ public class ScriptGuys extends Membro {
     @Override
     public void apresentarResumo() {
         System.out.println(
-                "Nome:" + this.nome +
-                        ";   Categoria: " + this.categoria +
-                        ";   Email: " + this.email +
-                        ";   Id: " + this.id
+                "Nome: " + this.nome +
+                        ";\tCategoria: " + this.categoria +
+                        ";\tEmail: " + this.email +
+                        ";\tId: " + this.id
         );
     }
 
@@ -44,16 +44,16 @@ public class ScriptGuys extends Membro {
      */
     @Override
     public void postarMensagem() {
-        if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name()))  {
-            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: Prazer em ajudar novos amigos de codigo!");
-        }
-        else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name())){
-            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: QU3Ro_S3us_r3curs0s.py");
+        if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name())) {
+            System.out.println(this.categoria + " " + this.nome + ": Prazer em ajudar novos amigos de codigo!");
+        } else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name())) {
+            System.out.println(this.categoria + " " + this.nome + ": QU3Ro_S3us_r3curs0s.py");
         }
     }
 
     /**
      * Funcao toString que retorna os parametros, especificados no metodo, da classe.
+     *
      * @return parametros da classe especificados pelo metodo.
      */
     @Override

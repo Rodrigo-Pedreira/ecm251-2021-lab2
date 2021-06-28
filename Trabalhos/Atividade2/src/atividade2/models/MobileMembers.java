@@ -6,14 +6,14 @@ import atividade2.enums.TiposMembros;
 
 /**
  * Classe MobileMembers, filha de Membros , implementa por heranca Apresentacao, PostarMensagem.
- *
+ * <p>
  * Atributos:
- *              categoria;
- *              nome;
- *              email;
- *              id;
+ * categoria;
+ * nome;
+ * email;
+ * id;
  */
-public class MobileMembers extends Membro{
+public class MobileMembers extends Membro {
 
     /**
      * Contrutor da classe MobileMembers. Ira cadastrar um novo usuario do tipo Big Brother.
@@ -32,10 +32,10 @@ public class MobileMembers extends Membro{
     @Override
     public void apresentarResumo() {
         System.out.println(
-                "Nome:" + this.nome +
-                        ";   Categoria: " + this.categoria +
-                        ";   Email: " + this.email +
-                        ";   Id: " + this.id
+                "Nome: " + this.nome +
+                        ";\tCategoria: " + this.categoria +
+                        ";\tEmail: " + this.email +
+                        ";\tId: " + this.id
         );
     }
 
@@ -44,16 +44,16 @@ public class MobileMembers extends Membro{
      */
     @Override
     public void postarMensagem() {
-        if(SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name() )){
-            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: Happy Coding!");
-        }
-        else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name() )){
-            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: MAsK_S0c13ty");
+        if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name())) {
+            System.out.println(this.categoria + " " + this.nome + ": Happy Coding!");
+        } else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name())) {
+            System.out.println(this.categoria + " " + this.nome + ": MAsK_S0c13ty");
         }
     }
 
     /**
      * Funcao toString que retorna os parametros, especificados no metodo, da classe.
+     *
      * @return parametros da classe especificados pelo metodo.
      */
     @Override

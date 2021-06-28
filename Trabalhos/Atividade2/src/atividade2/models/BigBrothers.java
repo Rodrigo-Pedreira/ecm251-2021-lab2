@@ -32,10 +32,10 @@ public class BigBrothers extends Membro {
     @Override
     public void apresentarResumo() {
         System.out.println(
-                "Nome:" + this.nome +
-                ";   Categoria: " + this.categoria +
-                ";   Email: " + this.email +
-                ";   Id: " + this.id
+                "Nome: " + this.nome +
+                        ";\tCategoria: " + this.categoria +
+                        ";\tEmail: " + this.email +
+                        ";\tId: " + this.id
         );
     }
 
@@ -45,14 +45,15 @@ public class BigBrothers extends Membro {
     @Override
     public void postarMensagem() {
         if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.REGULAR.name())) {
-            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: Sempre ajudando as pessoas membros ou não S2!");
+            System.out.println(this.categoria + " " + this.nome + ": Sempre ajudando as pessoas membros ou não S2!");
         } else if (SystemDrive.getHorarioAtualTrabalho().contentEquals(HorariosTrabalho.EXTRA.name())) {
-            System.out.println("O "+ this.categoria +" "+ this.nome + " disse: ...");
+            System.out.println(this.categoria + " " + this.nome + ": ...");
         }
     }
 
     /**
      * Funcao toString que retorna os parametros, especificados no metodo, da classe.
+     *
      * @return parametros da classe especificados pelo metodo.
      */
     @Override
