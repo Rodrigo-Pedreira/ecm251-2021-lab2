@@ -15,7 +15,7 @@ public abstract class CsvHandler {
     /**
      * Metodo publico statico void que sera responsavel por criar uma nova csv e escrever os parametros categoria, nome, id dos membros cadastrados, referencia aos objetos Membros esta contida no mapa.
      *
-     * @param mapa     HashMap<String, Membro> usado para acessar membros cadastrados.
+     * @param mapa     HashMap String, Membro; usado para acessar membros cadastrados.
      * @param filePath String que especifica a path para file de interesse.
      */
     public static void manipularCsv(HashMap<String, Membro> mapa, String filePath) {
